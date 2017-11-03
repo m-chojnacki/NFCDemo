@@ -1,24 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IbL-YI-hbu">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Menlo.ttc">
+            <string>Menlo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--NFC Demo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NFCDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvb-lK-krk">
+                                <rect key="frame" x="141" y="256.5" width="92" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Scan NFC"/>
+                                <connections>
+                                    <action selector="scanButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GKg-Uv-l5e"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dvb-lK-krk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4Nb-bZ-Hea"/>
+                            <constraint firstItem="dvb-lK-krk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FV6-En-9FF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="NFC Demo" id="UeV-fM-0tf"/>
+                    <connections>
+                        <segue destination="1Hm-24-SaR" kind="show" identifier="DetailsSegue" id="9ua-tD-rU4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="518" y="103"/>
+        </scene>
+        <!--Tag details-->
+        <scene sceneID="YBq-Uz-QNK">
+            <objects>
+                <viewController title="Tag details" id="1Hm-24-SaR" customClass="DetailsViewController" customModule="NFCDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YYK-qW-Pnp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjR-Sp-Ghm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXK-MG-6dh">
+                                        <rect key="frame" x="16" y="16" width="343" height="20"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ZXK-MG-6dh" firstAttribute="width" secondItem="VjR-Sp-Ghm" secondAttribute="width" constant="-32" id="ARk-Ry-mA1"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZXK-MG-6dh" secondAttribute="bottom" constant="16" id="VNG-vN-V5r"/>
+                                    <constraint firstItem="ZXK-MG-6dh" firstAttribute="top" secondItem="VjR-Sp-Ghm" secondAttribute="top" constant="16" id="a9H-9u-nI0"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZXK-MG-6dh" secondAttribute="trailing" constant="16" id="gL6-le-m4H"/>
+                                    <constraint firstItem="ZXK-MG-6dh" firstAttribute="leading" secondItem="VjR-Sp-Ghm" secondAttribute="leading" constant="16" id="vAT-As-OHu"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIP-ps-T9s">
+                                <rect key="frame" x="315" y="505" width="44" height="30"/>
+                                <state key="normal" title="Action"/>
+                                <connections>
+                                    <action selector="actionButtonDidTap:" destination="1Hm-24-SaR" eventType="touchUpInside" id="Src-I3-IPT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="C3L-Qm-QYR" firstAttribute="trailing" secondItem="IIP-ps-T9s" secondAttribute="trailing" constant="16" id="8cn-Sx-wBS"/>
+                            <constraint firstItem="VjR-Sp-Ghm" firstAttribute="leading" secondItem="C3L-Qm-QYR" secondAttribute="leading" id="Yqh-xK-lN7"/>
+                            <constraint firstItem="C3L-Qm-QYR" firstAttribute="bottom" secondItem="IIP-ps-T9s" secondAttribute="bottom" constant="16" id="f7c-ga-ybC"/>
+                            <constraint firstItem="C3L-Qm-QYR" firstAttribute="trailing" secondItem="VjR-Sp-Ghm" secondAttribute="trailing" id="mZo-Jb-i7V"/>
+                            <constraint firstItem="C3L-Qm-QYR" firstAttribute="bottom" secondItem="VjR-Sp-Ghm" secondAttribute="bottom" id="qcZ-Rw-dK7"/>
+                            <constraint firstItem="VjR-Sp-Ghm" firstAttribute="top" secondItem="C3L-Qm-QYR" secondAttribute="top" id="sL4-MO-VMG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C3L-Qm-QYR"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollableLabel" destination="ZXK-MG-6dh" id="Zcc-hf-8dc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wtv-TA-0NZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1425" y="103"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6VR-Gy-mxZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IbL-YI-hbu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="uHP-VD-drz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6AS-4J-trA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRS-bQ-wdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-367" y="103"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D32214A91FACAA450022CE59 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32214A81FACAA450022CE59 /* DetailsViewController.swift */; };
+		D32214AB1FACAF620022CE59 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32214AA1FACAF620022CE59 /* Extensions.swift */; };
+		D32214AD1FACBCCF0022CE59 /* RTDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32214AC1FACBCCF0022CE59 /* RTDType.swift */; };
+		D32214AF1FACC6F50022CE59 /* TextRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32214AE1FACC6F50022CE59 /* TextRecord.swift */; };
+		D32214B11FACCD790022CE59 /* URIRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32214B01FACCD790022CE59 /* URIRecord.swift */; };
 		D3A56FC31FAC9B2B00A870B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A56FC21FAC9B2B00A870B6 /* AppDelegate.swift */; };
 		D3A56FC51FAC9B2B00A870B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A56FC41FAC9B2B00A870B6 /* ViewController.swift */; };
 		D3A56FC81FAC9B2B00A870B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A56FC61FAC9B2B00A870B6 /* Main.storyboard */; };
@@ -15,6 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D32214A71FAC9F7B0022CE59 /* NFCDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NFCDemo.entitlements; sourceTree = "<group>"; };
+		D32214A81FACAA450022CE59 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		D32214AA1FACAF620022CE59 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D32214AC1FACBCCF0022CE59 /* RTDType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDType.swift; sourceTree = "<group>"; };
+		D32214AE1FACC6F50022CE59 /* TextRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecord.swift; sourceTree = "<group>"; };
+		D32214B01FACCD790022CE59 /* URIRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URIRecord.swift; sourceTree = "<group>"; };
 		D3A56FBF1FAC9B2B00A870B6 /* NFCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A56FC21FAC9B2B00A870B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3A56FC41FAC9B2B00A870B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,8 +65,14 @@
 		D3A56FC11FAC9B2B00A870B6 /* NFCDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D32214A71FAC9F7B0022CE59 /* NFCDemo.entitlements */,
 				D3A56FC21FAC9B2B00A870B6 /* AppDelegate.swift */,
 				D3A56FC41FAC9B2B00A870B6 /* ViewController.swift */,
+				D32214A81FACAA450022CE59 /* DetailsViewController.swift */,
+				D32214AA1FACAF620022CE59 /* Extensions.swift */,
+				D32214AC1FACBCCF0022CE59 /* RTDType.swift */,
+				D32214AE1FACC6F50022CE59 /* TextRecord.swift */,
+				D32214B01FACCD790022CE59 /* URIRecord.swift */,
 				D3A56FC61FAC9B2B00A870B6 /* Main.storyboard */,
 				D3A56FC91FAC9B2B00A870B6 /* Assets.xcassets */,
 				D3A56FCB1FAC9B2B00A870B6 /* LaunchScreen.storyboard */,
@@ -97,6 +114,11 @@
 					D3A56FBE1FAC9B2B00A870B6 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -137,7 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3A56FC51FAC9B2B00A870B6 /* ViewController.swift in Sources */,
+				D32214AF1FACC6F50022CE59 /* TextRecord.swift in Sources */,
 				D3A56FC31FAC9B2B00A870B6 /* AppDelegate.swift in Sources */,
+				D32214A91FACAA450022CE59 /* DetailsViewController.swift in Sources */,
+				D32214AB1FACAF620022CE59 /* Extensions.swift in Sources */,
+				D32214AD1FACBCCF0022CE59 /* RTDType.swift in Sources */,
+				D32214B11FACCD790022CE59 /* URIRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,13 +301,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NFCDemo/NFCDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 926P7F9746;
 				INFOPLIST_FILE = NFCDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.droids.NFCDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -288,13 +317,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NFCDemo/NFCDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 926P7F9746;
 				INFOPLIST_FILE = NFCDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.droids.NFCDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
